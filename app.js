@@ -11,6 +11,10 @@ const { Member } = db
 // 라우트 핸들러에의해 처리되기 전에 추가적으로 필요한 전처리를 수행하는 함수를 미들웨어라고 한다.
 app.use(express.json())
 
+app.get('/', (req, res) => {
+    res.send('URL should contain /api/..')
+})
+
 app.get('/api/members', async (req, res) => {
     // send 메소드가 배열인 members를 JSON으로 변환하여 response body에 추가하여 전송
     //res.send(members)
